@@ -1,0 +1,267 @@
+{
+	"frames": [
+		{
+			"filename": "jim000.png",
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 26,
+				"h": 34
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 26,
+				"h": 34
+			},
+			"sourceSize": {
+				"w": 26,
+				"h": 34
+			}
+		},
+		{
+			"filename": "jim001.png",
+			"frame": {
+				"x": 29,
+				"y": 1,
+				"w": 26,
+				"h": 34
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 26,
+				"h": 34
+			},
+			"sourceSize": {
+				"w": 26,
+				"h": 34
+			}
+		},
+		{
+			"filename": "jim002.png",
+			"frame": {
+				"x": 57,
+				"y": 1,
+				"w": 26,
+				"h": 34
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 26,
+				"h": 34
+			},
+			"sourceSize": {
+				"w": 26,
+				"h": 34
+			}
+		},
+		{
+			"filename": "jim003.png",
+			"frame": {
+				"x": 1,
+				"y": 37,
+				"w": 26,
+				"h": 34
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 26,
+				"h": 34
+			},
+			"sourceSize": {
+				"w": 26,
+				"h": 34
+			}
+		},
+		{
+			"filename": "jim004.png",
+			"frame": {
+				"x": 29,
+				"y": 37,
+				"w": 26,
+				"h": 34
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 26,
+				"h": 34
+			},
+			"sourceSize": {
+				"w": 26,
+				"h": 34
+			}
+		},
+		{
+			"filename": "jim005.png",
+			"frame": {
+				"x": 57,
+				"y": 37,
+				"w": 26,
+				"h": 34
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 26,
+				"h": 34
+			},
+			"sourceSize": {
+				"w": 26,
+				"h": 34
+			}
+		},
+		{
+			"filename": "jim006.png",
+			"frame": {
+				"x": 1,
+				"y": 73,
+				"w": 26,
+				"h": 34
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 26,
+				"h": 34
+			},
+			"sourceSize": {
+				"w": 26,
+				"h": 34
+			}
+		},
+		{
+			"filename": "jim007.png",
+			"frame": {
+				"x": 29,
+				"y": 73,
+				"w": 26,
+				"h": 34
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 26,
+				"h": 34
+			},
+			"sourceSize": {
+				"w": 26,
+				"h": 34
+			}
+		},
+		{
+			"filename": "jim008.png",
+			"frame": {
+				"x": 57,
+				"y": 73,
+				"w": 26,
+				"h": 34
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 26,
+				"h": 34
+			},
+			"sourceSize": {
+				"w": 26,
+				"h": 34
+			}
+		},
+		{
+			"filename": "jim009.png",
+			"frame": {
+				"x": 85,
+				"y": 1,
+				"w": 26,
+				"h": 34
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 26,
+				"h": 34
+			},
+			"sourceSize": {
+				"w": 26,
+				"h": 34
+			}
+		},
+		{
+			"filename": "jim010.png",
+			"frame": {
+				"x": 85,
+				"y": 37,
+				"w": 26,
+				"h": 34
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 26,
+				"h": 34
+			},
+			"sourceSize": {
+				"w": 26,
+				"h": 34
+			}
+		},
+		{
+			"filename": "jim011.png",
+			"frame": {
+				"x": 85,
+				"y": 73,
+				"w": 26,
+				"h": 34
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 26,
+				"h": 34
+			},
+			"sourceSize": {
+				"w": 26,
+				"h": 34
+			}
+		}
+	],
+	"meta": {
+		"app": "http://www.codeandweb.com/texturepacker",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 112,
+			"h": 108
+		},
+		"scale": "1"
+	}
+}
