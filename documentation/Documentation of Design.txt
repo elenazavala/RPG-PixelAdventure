@@ -1,0 +1,26 @@
+﻿======= DOCUMENTATION OF DESIGN =======
+
+
+----- GAME DESIGN -----
+     The game will revolve around the player increasing their knowledge stat while managing their energy to battle three exams. The player will win after defeating the third exam. The setting is an engineering campus based on KU’s School of Engineering.
+        The player starts in the WorldScene, which is the school campus. Every step reduces the player’s energy, so they have to collect coffee as they progress. Coffee randomly spawns outside and also spawns inside McClain’s. To increase knowledge, the player must visit the library and read the book, which also consumes energy.
+During a battle, the player’s starting health is determined by their energy and the player’s attacks do damage which scales with their knowledge stat. The battle is designed to be turn based, with the player always attacking first turn. Each exam gets increasingly harder, but this can be counteracted by the player obtaining stronger attacks.
+
+
+
+
+----- PLATFORM -----
+     This project uses JavaScript as the programming language and Phaser 3 as the game and graphics framework. The webpage created to run the JavaScript code and framework is written in HTML and has a CSS stylesheet which can be used to format the position of the game canvas. The Phaser 3 framework is responsible for creating and drawing the game canvas as well as updating it. 
+
+
+----- GAMEPLAY -----
+     The player interacts with the game using the arrow keys to move, the “a” key to interact with NPCs, and left mouse click to interact with on screen buttons. While in the overworld, the player can move around the map with arrow keys until they reach a collision hitbox. The arrow keys are functional in the following scenes: WorldScene, engrScene, engrRScene, engrLScene, LibraryScene, McLnScene. Buttons appear in the TitleScreenScene and in the BattleUIScene. The game begins by the player pressing the start button in the title screen. The attack for the player’s turn is selected during the BattleScene where the BattleUIScene is running. 
+
+
+----- USER INTERFACE -----
+     The overworld scenes will have two bars which represent the main values to be tracked in the game: knowledge and energy. The energy bar will update as the player walks around and picks up coffee. 
+     The battle scene has a UI which shows the exam and player’s health as well as a menu at the bottom to select attacks with. 
+
+
+----- CODE DESIGN -----
+     The Phaser 3 framework comes with a scene manager that allows for a modular system to create game scenes and switch between them. This is the main structure we followed for this design. Other parts of the code were also abstracted and created as classes, such as the Unit class for a battle unit and a Player class to update the player’s state.

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>BattleSimulationScene.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="../docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page_wrapper">
+            <div id="jump_page">
+              
+                
+                <a class="source" href="BattleScene.html">
+                  js/BattleScene.js
+                </a>
+              
+                
+                <a class="source" href="BattleSimulationScene.html">
+                  js/BattleSimulationScene.js
+                </a>
+              
+                
+                <a class="source" href="BattleUIScene.html">
+                  js/BattleUIScene.js
+                </a>
+              
+                
+                <a class="source" href="EnemyUnit.html">
+                  js/EnemyUnit.js
+                </a>
+              
+                
+                <a class="source" href="EngrLScene.html">
+                  js/EngrLScene.js
+                </a>
+              
+                
+                <a class="source" href="EngrRScene.html">
+                  js/EngrRScene.js
+                </a>
+              
+                
+                <a class="source" href="EngrScene.html">
+                  js/EngrScene.js
+                </a>
+              
+                
+                <a class="source" href="GameOverScene.html">
+                  js/GameOverScene.js
+                </a>
+              
+                
+                <a class="source" href="GameWinScene.html">
+                  js/GameWinScene.js
+                </a>
+              
+                
+                <a class="source" href="HealthBar.html">
+                  js/HealthBar.js
+                </a>
+              
+                
+                <a class="source" href="LibraryScene.html">
+                  js/LibraryScene.js
+                </a>
+              
+                
+                <a class="source" href="McLnScene.html">
+                  js/McLnScene.js
+                </a>
+              
+                
+                <a class="source" href="Player.html">
+                  js/Player.js
+                </a>
+              
+                
+                <a class="source" href="PlayerUnit.html">
+                  js/PlayerUnit.js
+                </a>
+              
+                
+                <a class="source" href="SettingsScene.html">
+                  js/SettingsScene.js
+                </a>
+              
+                
+                <a class="source" href="TitleScene.html">
+                  js/TitleScene.js
+                </a>
+              
+                
+                <a class="source" href="Unit.html">
+                  js/Unit.js
+                </a>
+              
+                
+                <a class="source" href="WorldScene.html">
+                  js/WorldScene.js
+                </a>
+              
+                
+                <a class="source" href="main.html">
+                  js/main.js
+                </a>
+              
+            </div>
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>BattleSimulationScene.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BattleSimulationScene</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Phaser</span>.<span class="hljs-title">Scene</span>
+</span>{
+  <span class="hljs-keyword">constructor</span>()
+  {
+    <span class="hljs-keyword">super</span>(<span class="hljs-string">"BattleSimulationScene"</span>);
+    <span class="hljs-keyword">this</span>.key = <span class="hljs-string">"BattleSimulationScene"</span>;
+    <span class="hljs-keyword">this</span>.completeAttArr = [{<span class="hljs-attr">name</span>:<span class="hljs-string">"Inheritance"</span>,<span class="hljs-attr">basePower</span>:<span class="hljs-number">40</span>, <span class="hljs-attr">cost</span>:<span class="hljs-number">5</span>, <span class="hljs-attr">accuracy</span>:<span class="hljs-number">95</span>, <span class="hljs-attr">critRate</span>:<span class="hljs-number">1</span>},
+                           {<span class="hljs-attr">name</span>:<span class="hljs-string">"Linked List"</span>,<span class="hljs-attr">basePower</span>:<span class="hljs-number">60</span>, <span class="hljs-attr">cost</span>:<span class="hljs-number">2</span>, <span class="hljs-attr">accuracy</span>:<span class="hljs-number">85</span>, <span class="hljs-attr">critRate</span>:<span class="hljs-number">1</span>},
+                           {<span class="hljs-attr">name</span>:<span class="hljs-string">"Recursion"</span>,<span class="hljs-attr">basePower</span>:<span class="hljs-number">55</span>, <span class="hljs-attr">cost</span>:<span class="hljs-number">5</span>, <span class="hljs-attr">accuracy</span>:<span class="hljs-number">85</span>, <span class="hljs-attr">critRate</span>:<span class="hljs-number">2</span>},
+                           {<span class="hljs-attr">name</span>:<span class="hljs-string">"Big O"</span>,<span class="hljs-attr">basePower</span>:<span class="hljs-number">85</span>, <span class="hljs-attr">cost</span>:<span class="hljs-number">5</span>, <span class="hljs-attr">accuracy</span>:<span class="hljs-number">70</span>, <span class="hljs-attr">critRate</span>:<span class="hljs-number">1</span>}
+                           ];
+  }
+
+  create()
+  {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>create button</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">var</span> button = <span class="hljs-keyword">this</span>.add.text(<span class="hljs-number">100</span>, <span class="hljs-number">200</span>, <span class="hljs-string">"Click to start simulation (results in console)"</span>, {<span class="hljs-attr">font</span>:<span class="hljs-string">"bold 30px Arial"</span>, <span class="hljs-attr">fill</span>:<span class="hljs-string">"white"</span>}).setInteractive({<span class="hljs-attr">useHandCursor</span>: <span class="hljs-literal">true</span>});
+    button.on(<span class="hljs-string">'pointerdown'</span>,() =&gt; <span class="hljs-keyword">this</span>.click());
+
+    <span class="hljs-keyword">var</span> backButton = <span class="hljs-keyword">this</span>.add.text(<span class="hljs-number">100</span>, <span class="hljs-number">400</span>, <span class="hljs-string">"Return to settings menu"</span>, {<span class="hljs-attr">font</span>:<span class="hljs-string">"30px Arial"</span>, <span class="hljs-attr">fill</span>:<span class="hljs-string">"white"</span>}).setInteractive({<span class="hljs-attr">useHandCursor</span>: <span class="hljs-literal">true</span>});
+    backButton.on(<span class="hljs-string">'pointerdown'</span>, () =&gt; <span class="hljs-keyword">this</span>.clickBack());
+  }
+
+  click()
+  {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Beginning 1000 tests on 3 units using all attacks"</span>);
+
+    <span class="hljs-keyword">const</span> totalTests = <span class="hljs-number">1000</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>create test units</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">let</span> testUnit1 = <span class="hljs-keyword">new</span> Unit(<span class="hljs-keyword">this</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-string">'player'</span>,<span class="hljs-number">0</span>,<span class="hljs-number">100</span>,<span class="hljs-number">0</span>,<span class="hljs-keyword">this</span>.completeAttArr);<span class="hljs-comment">//0 knowledge</span>
+    <span class="hljs-keyword">let</span> testUnit2 = <span class="hljs-keyword">new</span> Unit(<span class="hljs-keyword">this</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-string">'player'</span>,<span class="hljs-number">0</span>,<span class="hljs-number">100</span>,<span class="hljs-number">50</span>,<span class="hljs-keyword">this</span>.completeAttArr);<span class="hljs-comment">//50 knowledge</span>
+    <span class="hljs-keyword">let</span> testUnit3 = <span class="hljs-keyword">new</span> Unit(<span class="hljs-keyword">this</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-string">'player'</span>,<span class="hljs-number">0</span>,<span class="hljs-number">100</span>,<span class="hljs-number">100</span>,<span class="hljs-keyword">this</span>.completeAttArr);<span class="hljs-comment">//100 knowledge</span>
+    <span class="hljs-keyword">let</span> unitArr = [testUnit1, testUnit2, testUnit3];
+    <span class="hljs-keyword">let</span> report;
+    <span class="hljs-keyword">let</span> singleReport;
+    <span class="hljs-keyword">let</span> totalDamage;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; unitArr.length; i++)<span class="hljs-comment">//every unit</span>
+    {
+      <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-keyword">this</span>.completeAttArr.length; j++)<span class="hljs-comment">//every attack</span>
+      {
+        report = {<span class="hljs-attr">hits</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">critical_hits</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">max_damage</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">min_damage</span>: <span class="hljs-number">0</span>, <span class="hljs-attr">average_damage</span>: <span class="hljs-number">0</span>};
+        totalDamage = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> k = <span class="hljs-number">0</span>; k &lt;= totalTests; k++)<span class="hljs-comment">//100 tests</span>
+        {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>get report</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>          singleReport = unitArr[i].calculateDamage(<span class="hljs-keyword">this</span>.completeAttArr[j].basePower, <span class="hljs-keyword">this</span>.completeAttArr[j].accuracy, <span class="hljs-keyword">this</span>.completeAttArr[j].critRate);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>check for hits</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>          <span class="hljs-keyword">if</span>(!singleReport.miss)
+          {
+            report.hits++;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>check for min damage</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>            <span class="hljs-keyword">if</span>(totalDamage == <span class="hljs-number">0</span> || singleReport.damage &lt; report.damage)
+            {
+              report.min_damage = singleReport.damage;
+            }
+          }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>check for max damage</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>          <span class="hljs-keyword">if</span>(singleReport.damage &gt; report.max_damage)
+          {
+            report.max_damage = singleReport.damage;
+          }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>check for crits</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>          <span class="hljs-keyword">if</span>(singleReport.critical)
+          {
+            report.critical_hits++;
+          }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>sum damage</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>          totalDamage = totalDamage + singleReport.damage;
+        }
+        report.average_damage = totalDamage / totalTests;
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Unit "</span> + (i+<span class="hljs-number">1</span>) + <span class="hljs-string">" with "</span> + (i*<span class="hljs-number">50</span>) + <span class="hljs-string">" knowledge using "</span> + <span class="hljs-keyword">this</span>.completeAttArr[j].name + <span class="hljs-string">" results:"</span>);
+        <span class="hljs-built_in">console</span>.log(report);
+      }
+    }
+  }
+
+  clickBack()
+  {
+    <span class="hljs-keyword">this</span>.scene.pause();
+    <span class="hljs-keyword">this</span>.scene.switch(<span class="hljs-string">"SettingsScene"</span>);
+  }
+
+}</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

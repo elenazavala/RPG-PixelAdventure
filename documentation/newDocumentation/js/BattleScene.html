@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>BattleScene.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="../docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page_wrapper">
+            <div id="jump_page">
+              
+                
+                <a class="source" href="BattleScene.html">
+                  js/BattleScene.js
+                </a>
+              
+                
+                <a class="source" href="BattleSimulationScene.html">
+                  js/BattleSimulationScene.js
+                </a>
+              
+                
+                <a class="source" href="BattleUIScene.html">
+                  js/BattleUIScene.js
+                </a>
+              
+                
+                <a class="source" href="EnemyUnit.html">
+                  js/EnemyUnit.js
+                </a>
+              
+                
+                <a class="source" href="EngrLScene.html">
+                  js/EngrLScene.js
+                </a>
+              
+                
+                <a class="source" href="EngrRScene.html">
+                  js/EngrRScene.js
+                </a>
+              
+                
+                <a class="source" href="EngrScene.html">
+                  js/EngrScene.js
+                </a>
+              
+                
+                <a class="source" href="GameOverScene.html">
+                  js/GameOverScene.js
+                </a>
+              
+                
+                <a class="source" href="GameWinScene.html">
+                  js/GameWinScene.js
+                </a>
+              
+                
+                <a class="source" href="HealthBar.html">
+                  js/HealthBar.js
+                </a>
+              
+                
+                <a class="source" href="LibraryScene.html">
+                  js/LibraryScene.js
+                </a>
+              
+                
+                <a class="source" href="McLnScene.html">
+                  js/McLnScene.js
+                </a>
+              
+                
+                <a class="source" href="Player.html">
+                  js/Player.js
+                </a>
+              
+                
+                <a class="source" href="PlayerUnit.html">
+                  js/PlayerUnit.js
+                </a>
+              
+                
+                <a class="source" href="SettingsScene.html">
+                  js/SettingsScene.js
+                </a>
+              
+                
+                <a class="source" href="TitleScene.html">
+                  js/TitleScene.js
+                </a>
+              
+                
+                <a class="source" href="Unit.html">
+                  js/Unit.js
+                </a>
+              
+                
+                <a class="source" href="WorldScene.html">
+                  js/WorldScene.js
+                </a>
+              
+                
+                <a class="source" href="main.html">
+                  js/main.js
+                </a>
+              
+            </div>
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>BattleScene.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <p>This class is to be instantiated with keyword new to create different battle scenes
+different units. This scene launches BattleUIScene which runs at the same time to
+display the menu and health bar UI.</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BattleScene</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Phaser</span>.<span class="hljs-title">Scene</span>
+</span>{
+  <span class="hljs-keyword">constructor</span>(instanceName, previousSceneKey)
+  {
+    <span class="hljs-keyword">super</span>(instanceName);
+    <span class="hljs-keyword">this</span>.name = instanceName;
+    <span class="hljs-keyword">this</span>.previousSceneKey = previousSceneKey; <span class="hljs-comment">//string to switch back to previous Scene</span>
+  }
+
+  preload()
+  {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>load battle audio</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.load.audio(<span class="hljs-string">"battleTheme"</span>, <span class="hljs-string">"assets/audio/battleSceneMusic.mp3"</span>)
+
+  }
+
+  create()
+  {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>start of music section…………………………………</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    game.sound.stopAll();
+    <span class="hljs-keyword">this</span>.battleMusic = <span class="hljs-keyword">this</span>.sound.add(<span class="hljs-string">"battleTheme"</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>config variable for music</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">var</span> musicConfig =
+    {
+      <span class="hljs-attr">mute</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">volume</span>: <span class="hljs-number">1</span> * gameSettings.volume,
+      <span class="hljs-attr">rate</span>: <span class="hljs-number">1</span>,
+      <span class="hljs-attr">detune</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">seek</span>: <span class="hljs-number">0</span>,
+      <span class="hljs-attr">loop</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">delay</span>: <span class="hljs-number">0</span>
+    }
+    <span class="hljs-keyword">this</span>.battleMusic.play(musicConfig);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>end music section………………………………………..</p>
+
+            </div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>add background</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">let</span> bg = <span class="hljs-keyword">this</span>.add.image(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-string">'battleSceneBG'</span>);
+    bg.setOrigin(<span class="hljs-number">0</span>,<span class="hljs-number">0</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>create player character and add to scene</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">this</span>.player_battle = <span class="hljs-keyword">new</span> PlayerUnit(<span class="hljs-keyword">this</span>, <span class="hljs-number">1024</span>*<span class="hljs-number">2</span>/<span class="hljs-number">3</span>+<span class="hljs-number">50</span>+<span class="hljs-number">20</span>, <span class="hljs-number">768</span>/<span class="hljs-number">3</span>+<span class="hljs-number">50</span>+<span class="hljs-number">130</span>, <span class="hljs-string">"player"</span>, <span class="hljs-number">15</span>, energy, kn, attackArr);
+    <span class="hljs-keyword">this</span>.add.existing(<span class="hljs-keyword">this</span>.player_battle);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>create exam enemy</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">let</span> examKnowledge = <span class="hljs-number">40</span> + (<span class="hljs-number">15</span> + gameSettings.difficulty * <span class="hljs-number">5</span> ) * (battleCount<span class="hljs-number">-1</span>);
+    <span class="hljs-keyword">this</span>.exam_battle = <span class="hljs-keyword">new</span> EnemyUnit(<span class="hljs-keyword">this</span>, <span class="hljs-number">1024</span>*<span class="hljs-number">1</span>/<span class="hljs-number">3</span><span class="hljs-number">-50</span><span class="hljs-number">-45</span>, <span class="hljs-number">768</span>/<span class="hljs-number">3</span>+<span class="hljs-number">50</span><span class="hljs-number">-60</span>, <span class="hljs-string">"exam"</span>, <span class="hljs-number">3</span>, <span class="hljs-number">100</span>, examKnowledge, examAttackArr);
+    <span class="hljs-keyword">this</span>.add.existing(<span class="hljs-keyword">this</span>.exam_battle);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>run UI at the same time</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">let</span> battleUI = <span class="hljs-keyword">new</span> BattleUIScene(<span class="hljs-string">"BattleUIScene"</span> + battleCount, <span class="hljs-keyword">this</span>.name);
+    <span class="hljs-keyword">this</span>.scene.add(<span class="hljs-string">"BattleUIScene"</span> + battleCount, battleUI);
+    <span class="hljs-keyword">this</span>.scene.launch(<span class="hljs-string">"BattleUIScene"</span> + battleCount);
+  }
+
+  update()
+  {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <p>check for win</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span>.exam_battle.health &lt;= <span class="hljs-number">0</span>)
+    {
+      <span class="hljs-keyword">this</span>.battleMusic.stop();</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-11">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-11">&#182;</a>
+              </div>
+              <p>remove UI</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      <span class="hljs-keyword">this</span>.scene.remove(<span class="hljs-string">"BattleUIScene"</span> + battleCount);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-12">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-12">&#182;</a>
+              </div>
+              <p>increment battle count</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>      battleCount++;
+      game.scene.keys[<span class="hljs-keyword">this</span>.name].sys.sleep();
+      kn = <span class="hljs-number">0</span>;
+      KnowledgeBar.x = <span class="hljs-number">95</span>;
+      energy = player.getEnergy();
+      <span class="hljs-keyword">if</span>(battleCount &gt; <span class="hljs-number">3</span>)
+      {
+        <span class="hljs-keyword">this</span>.scene.start(<span class="hljs-string">"GameWinScene"</span>);
+      }
+      <span class="hljs-keyword">else</span>
+      {
+        <span class="hljs-keyword">this</span>.scene.resume(<span class="hljs-string">"EngrRScene"</span>);
+        <span class="hljs-keyword">this</span>.scene.switch(<span class="hljs-string">"EngrRScene"</span>);
+      }
+    }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-13">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-13">&#182;</a>
+              </div>
+              <p>check for loss</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span>.player_battle.health == <span class="hljs-number">0</span>)
+    {
+      <span class="hljs-keyword">this</span>.scene.remove(<span class="hljs-string">"BattleUIScene"</span> + battleCount);
+      <span class="hljs-keyword">this</span>.scene.switch(<span class="hljs-string">"GameOverScene"</span>);
+    }
+  }
+}</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

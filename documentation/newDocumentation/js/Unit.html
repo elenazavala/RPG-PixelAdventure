@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>Unit.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="../docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page_wrapper">
+            <div id="jump_page">
+              
+                
+                <a class="source" href="BattleScene.html">
+                  js/BattleScene.js
+                </a>
+              
+                
+                <a class="source" href="BattleSimulationScene.html">
+                  js/BattleSimulationScene.js
+                </a>
+              
+                
+                <a class="source" href="BattleUIScene.html">
+                  js/BattleUIScene.js
+                </a>
+              
+                
+                <a class="source" href="EnemyUnit.html">
+                  js/EnemyUnit.js
+                </a>
+              
+                
+                <a class="source" href="EngrLScene.html">
+                  js/EngrLScene.js
+                </a>
+              
+                
+                <a class="source" href="EngrRScene.html">
+                  js/EngrRScene.js
+                </a>
+              
+                
+                <a class="source" href="EngrScene.html">
+                  js/EngrScene.js
+                </a>
+              
+                
+                <a class="source" href="GameOverScene.html">
+                  js/GameOverScene.js
+                </a>
+              
+                
+                <a class="source" href="GameWinScene.html">
+                  js/GameWinScene.js
+                </a>
+              
+                
+                <a class="source" href="HealthBar.html">
+                  js/HealthBar.js
+                </a>
+              
+                
+                <a class="source" href="LibraryScene.html">
+                  js/LibraryScene.js
+                </a>
+              
+                
+                <a class="source" href="McLnScene.html">
+                  js/McLnScene.js
+                </a>
+              
+                
+                <a class="source" href="Player.html">
+                  js/Player.js
+                </a>
+              
+                
+                <a class="source" href="PlayerUnit.html">
+                  js/PlayerUnit.js
+                </a>
+              
+                
+                <a class="source" href="SettingsScene.html">
+                  js/SettingsScene.js
+                </a>
+              
+                
+                <a class="source" href="TitleScene.html">
+                  js/TitleScene.js
+                </a>
+              
+                
+                <a class="source" href="Unit.html">
+                  js/Unit.js
+                </a>
+              
+                
+                <a class="source" href="WorldScene.html">
+                  js/WorldScene.js
+                </a>
+              
+                
+                <a class="source" href="main.html">
+                  js/main.js
+                </a>
+              
+            </div>
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>Unit.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              <p>This class contains the general Unit class which hold the basic functionalities of a battle
+unit object. The class holds the values for the unit’s stats and has methods which can target
+another unit and calculat damage</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Unit</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Phaser</span>.<span class="hljs-title">GameObjects</span>.<span class="hljs-title">Sprite</span>
+</span>{
+  <span class="hljs-keyword">constructor</span>(scene, x, y, texture, frame, health, baseAttack, attacks)
+  {
+    <span class="hljs-keyword">super</span>(scene,x,y,texture,frame);
+    <span class="hljs-keyword">this</span>.attacks = attacks;
+    <span class="hljs-keyword">this</span>.health = health;
+    <span class="hljs-keyword">this</span>.baseAttack = baseAttack;
+  }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>calculates damage which scales with this.baseAttack
+@param basePower is the attack power, accuracy is attack accuracy, critRate is attack critRate
+@return returns an integer which represents damage</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  calculateDamage(basePower, accuracy, critRate)
+  {
+    <span class="hljs-keyword">let</span> hit = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">let</span> crit = <span class="hljs-number">1</span>;</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>accuracy check</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span>(Phaser.Math.Between(<span class="hljs-number">0</span>,<span class="hljs-number">100</span>) &gt; accuracy)
+    {
+      hit = <span class="hljs-number">0</span>;
+    }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>critical hit check</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">if</span>(Phaser.Math.Between(<span class="hljs-number">1</span>,<span class="hljs-number">8</span>) &lt;= <span class="hljs-number">1</span>*critRate)
+    {
+      crit = <span class="hljs-number">2</span>;
+    }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>damage calculation</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    <span class="hljs-keyword">return</span> ({<span class="hljs-attr">damage</span>:(<span class="hljs-built_in">Math</span>.ceil(hit * (basePower * (<span class="hljs-keyword">this</span>.baseAttack + <span class="hljs-number">1</span>) / <span class="hljs-number">100</span>))*crit),<span class="hljs-attr">critical</span>:(crit == <span class="hljs-number">2</span>), <span class="hljs-attr">miss</span>:(hit == <span class="hljs-number">0</span>)});
+  }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>reduces the health for a target unit
+@param target is of type Unit, and attackInfo is an attack object
+@post reduces target’s health attribute by at least 1</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  attack(target, attackInfo)
+  {
+    <span class="hljs-keyword">let</span> damageReport = <span class="hljs-keyword">this</span>.calculateDamage(attackInfo.basePower, attackInfo.accuracy, attackInfo.critRate);
+    target.receiveDamage(damageReport.damage);
+    <span class="hljs-keyword">return</span>(damageReport);
+  }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>reduces this.health by the integer damage
+@param damage is a number to reduce this.health by
+@pre damage must be an integer
+@post this.health will be reduced by up to the amount of damage, with this.health &gt;= 0</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  receiveDamage(damage)
+  {
+    <span class="hljs-keyword">this</span>.health = <span class="hljs-keyword">this</span>.health - damage;
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">this</span>.health &lt; <span class="hljs-number">0</span>)
+    {
+      <span class="hljs-keyword">this</span>.health = <span class="hljs-number">0</span>;
+    }
+  }
+}</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

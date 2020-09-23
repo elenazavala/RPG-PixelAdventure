@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>EngrLScene.js</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+  <link rel="stylesheet" media="all" href="../docco.css" />
+</head>
+<body>
+  <div id="container">
+    <div id="background"></div>
+    
+      <ul id="jump_to">
+        <li>
+          <a class="large" href="javascript:void(0);">Jump To &hellip;</a>
+          <a class="small" href="javascript:void(0);">+</a>
+          <div id="jump_wrapper">
+          <div id="jump_page_wrapper">
+            <div id="jump_page">
+              
+                
+                <a class="source" href="BattleScene.html">
+                  js/BattleScene.js
+                </a>
+              
+                
+                <a class="source" href="BattleSimulationScene.html">
+                  js/BattleSimulationScene.js
+                </a>
+              
+                
+                <a class="source" href="BattleUIScene.html">
+                  js/BattleUIScene.js
+                </a>
+              
+                
+                <a class="source" href="EnemyUnit.html">
+                  js/EnemyUnit.js
+                </a>
+              
+                
+                <a class="source" href="EngrLScene.html">
+                  js/EngrLScene.js
+                </a>
+              
+                
+                <a class="source" href="EngrRScene.html">
+                  js/EngrRScene.js
+                </a>
+              
+                
+                <a class="source" href="EngrScene.html">
+                  js/EngrScene.js
+                </a>
+              
+                
+                <a class="source" href="GameOverScene.html">
+                  js/GameOverScene.js
+                </a>
+              
+                
+                <a class="source" href="GameWinScene.html">
+                  js/GameWinScene.js
+                </a>
+              
+                
+                <a class="source" href="HealthBar.html">
+                  js/HealthBar.js
+                </a>
+              
+                
+                <a class="source" href="LibraryScene.html">
+                  js/LibraryScene.js
+                </a>
+              
+                
+                <a class="source" href="McLnScene.html">
+                  js/McLnScene.js
+                </a>
+              
+                
+                <a class="source" href="Player.html">
+                  js/Player.js
+                </a>
+              
+                
+                <a class="source" href="PlayerUnit.html">
+                  js/PlayerUnit.js
+                </a>
+              
+                
+                <a class="source" href="SettingsScene.html">
+                  js/SettingsScene.js
+                </a>
+              
+                
+                <a class="source" href="TitleScene.html">
+                  js/TitleScene.js
+                </a>
+              
+                
+                <a class="source" href="Unit.html">
+                  js/Unit.js
+                </a>
+              
+                
+                <a class="source" href="WorldScene.html">
+                  js/WorldScene.js
+                </a>
+              
+                
+                <a class="source" href="main.html">
+                  js/main.js
+                </a>
+              
+            </div>
+          </div>
+        </li>
+      </ul>
+    
+    <ul class="sections">
+        
+          <li id="title">
+              <div class="annotation">
+                  <h1>EngrLScene.js</h1>
+              </div>
+          </li>
+        
+        
+        
+        <li id="section-1">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-1">&#182;</a>
+              </div>
+              
+            </div>
+            
+            <div class="content"><div class='highlight'><pre><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">EngrLScene</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Phaser</span>.<span class="hljs-title">Scene</span> </span>{
+	<span class="hljs-keyword">constructor</span>() {
+    <span class="hljs-keyword">super</span>({<span class="hljs-attr">key</span> : <span class="hljs-string">'EngrLScene'</span>});
+    <span class="hljs-keyword">this</span>.key = <span class="hljs-string">'EngrLScene'</span>;
+		<span class="hljs-keyword">this</span>.collectedAttacks = {<span class="hljs-attr">first</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">second</span>: <span class="hljs-literal">false</span>, <span class="hljs-attr">third</span>: <span class="hljs-literal">false</span>};
+    }
+
+preload() {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-2">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-2">&#182;</a>
+              </div>
+              <p>load necessary images</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">this</span>.load.image(<span class="hljs-string">"tiles"</span>, <span class="hljs-string">"./assets/tilesets/worldKU.png"</span>);
+  <span class="hljs-keyword">this</span>.load.tilemapTiledJSON(<span class="hljs-string">"map3"</span>, <span class="hljs-string">"./assets/tilemaps/engrLeft.json"</span>);
+  <span class="hljs-keyword">this</span>.load.spritesheet(<span class="hljs-string">'Gill'</span>, <span class="hljs-string">"./assets/sprites/Gill.png"</span>, { <span class="hljs-attr">frameWidth</span>: <span class="hljs-number">32</span>, <span class="hljs-attr">frameHeight</span>: <span class="hljs-number">32</span> });<span class="hljs-comment">//load Gibbons sprite</span>
+  <span class="hljs-keyword">this</span>.load.image(<span class="hljs-string">"boxBack"</span>, <span class="hljs-string">"assets/box1.png"</span>);<span class="hljs-comment">//load chat box</span>
+
+}
+
+create() {</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-3">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-3">&#182;</a>
+              </div>
+              <p>create const map</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">const</span> map3 = <span class="hljs-keyword">this</span>.make.tilemap({ <span class="hljs-attr">key</span>: <span class="hljs-string">"map3"</span> });</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-4">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-4">&#182;</a>
+              </div>
+              <p>add tileset to map</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">const</span> tileset = map3.addTilesetImage(<span class="hljs-string">"worldKU"</span>, <span class="hljs-string">"tiles"</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>create layers</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">const</span> belowLayer = map3.createStaticLayer(<span class="hljs-string">"Below Player"</span>, tileset, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+  <span class="hljs-keyword">const</span> worldLayer = map3.createStaticLayer(<span class="hljs-string">"World"</span>, tileset, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-6">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-6">&#182;</a>
+              </div>
+              <p>set collision</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  worldLayer.setCollisionByProperty({<span class="hljs-attr">collision</span>: <span class="hljs-literal">true</span>});</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-7">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-7">&#182;</a>
+              </div>
+              <p>find spawn point on map</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">const</span> spawnPoint = map3.findObject(<span class="hljs-string">"Objects"</span>, obj =&gt; obj.name === <span class="hljs-string">"Spawn Point"</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-8">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-8">&#182;</a>
+              </div>
+              <p>set Energy bar</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">var</span> backgroundBar = <span class="hljs-keyword">this</span>.add.image(<span class="hljs-number">195</span>,<span class="hljs-number">730</span>,<span class="hljs-string">"red-bar"</span>);
+  EnergyBar = <span class="hljs-keyword">this</span>.add.image(EnergyBar.x,<span class="hljs-number">730</span>,<span class="hljs-string">"green-bar"</span>);
+  backgroundBar.fixedToCamera = <span class="hljs-literal">true</span>;
+  EnergyBar.fixedToCamera = <span class="hljs-literal">true</span>;
+  backgroundBar.setScrollFactor(<span class="hljs-number">0</span>);
+  EnergyBar.setScrollFactor(<span class="hljs-number">0</span>);
+
+  <span class="hljs-keyword">this</span>.healthLabel = <span class="hljs-keyword">this</span>.add.bitmapText(<span class="hljs-number">20</span>,<span class="hljs-number">725</span>,<span class="hljs-string">"pixelFont"</span>, <span class="hljs-string">"ENERGY: "</span>,<span class="hljs-number">20</span>);
+  <span class="hljs-keyword">this</span>.healthLabel.setScrollFactor(<span class="hljs-number">0</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-9">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-9">&#182;</a>
+              </div>
+              <p>set Knowledge bar</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">var</span> backBar = <span class="hljs-keyword">this</span>.add.image(<span class="hljs-number">195</span>,<span class="hljs-number">698</span>,<span class="hljs-string">"red-knowledge"</span>);
+  KnowledgeBar = <span class="hljs-keyword">this</span>.add.image(KnowledgeBar.x,<span class="hljs-number">698</span>,<span class="hljs-string">"green-knowledge"</span>);
+  backBar.fixedToCamera = <span class="hljs-literal">true</span>;
+  KnowledgeBar.fixedToCamera = <span class="hljs-literal">true</span>;
+  backBar.setScrollFactor(<span class="hljs-number">0</span>);
+  KnowledgeBar.setScrollFactor(<span class="hljs-number">0</span>);
+
+  <span class="hljs-keyword">this</span>.healthLabel = <span class="hljs-keyword">this</span>.add.bitmapText(<span class="hljs-number">6</span>,<span class="hljs-number">693</span>,<span class="hljs-string">"Font-knowledge-bar"</span>, <span class="hljs-string">"KNOWLEDGE: "</span>,<span class="hljs-number">20</span>);
+  <span class="hljs-keyword">this</span>.healthLabel.setScrollFactor(<span class="hljs-number">0</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-10">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-10">&#182;</a>
+              </div>
+              <p>add player to spawn point</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre> player = <span class="hljs-keyword">new</span> Player({<span class="hljs-attr">scene</span>:<span class="hljs-keyword">this</span>,
+   <span class="hljs-attr">x</span>:spawnPoint.x,
+   <span class="hljs-attr">y</span>:spawnPoint.y,
+   <span class="hljs-attr">key</span>:<span class="hljs-string">'player'</span>,
+   <span class="hljs-attr">energy</span>:energy,
+    <span class="hljs-attr">knowledge</span>:kn});</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-11">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-11">&#182;</a>
+              </div>
+              <p>add Gill sprite to scene</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">let</span> gill = <span class="hljs-keyword">this</span>.physics.add.sprite(<span class="hljs-number">615</span>, <span class="hljs-number">335</span>, <span class="hljs-string">"Gill"</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-12">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-12">&#182;</a>
+              </div>
+              <p>collider</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">this</span>.physics.add.collider(player, worldLayer);
+
+  <span class="hljs-keyword">this</span>.anims.create({
+    <span class="hljs-attr">key</span>: <span class="hljs-string">'right'</span>,
+    <span class="hljs-attr">frames</span>: <span class="hljs-keyword">this</span>.anims.generateFrameNumbers(<span class="hljs-string">'player'</span>, { <span class="hljs-attr">start</span>: <span class="hljs-number">5</span>, <span class="hljs-attr">end</span>: <span class="hljs-number">9</span> }),
+    <span class="hljs-attr">frameRate</span>: <span class="hljs-number">10</span>,
+    <span class="hljs-attr">repeat</span>: <span class="hljs-number">-1</span>
+  });
+
+  <span class="hljs-keyword">this</span>.anims.create({
+      <span class="hljs-attr">key</span>: <span class="hljs-string">'left'</span>,
+      <span class="hljs-attr">frames</span>: <span class="hljs-keyword">this</span>.anims.generateFrameNumbers(<span class="hljs-string">'player'</span>, { <span class="hljs-attr">start</span>: <span class="hljs-number">10</span>, <span class="hljs-attr">end</span>: <span class="hljs-number">14</span> }),
+      <span class="hljs-attr">frameRate</span>: <span class="hljs-number">10</span>,
+      <span class="hljs-attr">repeat</span>: <span class="hljs-number">-1</span>
+  });
+
+  <span class="hljs-keyword">this</span>.anims.create({
+    <span class="hljs-attr">key</span>: <span class="hljs-string">'up'</span>,
+    <span class="hljs-attr">frames</span>: <span class="hljs-keyword">this</span>.anims.generateFrameNumbers(<span class="hljs-string">'player'</span>, { <span class="hljs-attr">start</span>: <span class="hljs-number">15</span>, <span class="hljs-attr">end</span>: <span class="hljs-number">19</span> }),
+    <span class="hljs-attr">frameRate</span>: <span class="hljs-number">10</span>,
+    <span class="hljs-attr">repeat</span>: <span class="hljs-number">-1</span>
+  });
+
+  <span class="hljs-keyword">this</span>.anims.create({
+    <span class="hljs-attr">key</span>: <span class="hljs-string">'down'</span>,
+    <span class="hljs-attr">frames</span>: <span class="hljs-keyword">this</span>.anims.generateFrameNumbers(<span class="hljs-string">'player'</span>, { <span class="hljs-attr">start</span>: <span class="hljs-number">1</span>, <span class="hljs-attr">end</span>: <span class="hljs-number">4</span>}),
+    <span class="hljs-attr">frameRate</span>: <span class="hljs-number">10</span>,
+    <span class="hljs-attr">repeat</span>: <span class="hljs-number">-1</span>
+  });</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-13">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-13">&#182;</a>
+              </div>
+              <p>default camera</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">const</span> camera = <span class="hljs-keyword">this</span>.cameras.main;
+  camera.startFollow(player);
+  camera.setBounds(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, map3.widthInPixels, map3.heightInPixels);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-14">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-14">&#182;</a>
+              </div>
+              <p>talk to gill</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">this</span>.physics.add.overlap(player, gill, <span class="hljs-keyword">this</span>.clickBook, <span class="hljs-literal">null</span>, <span class="hljs-keyword">this</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-15">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-15">&#182;</a>
+              </div>
+              <p>dialogue box section…………………………………</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">this</span>.dialogueBox = <span class="hljs-keyword">this</span>.add.image(<span class="hljs-number">550</span>, <span class="hljs-number">290</span>, <span class="hljs-string">"textbox"</span>);
+  <span class="hljs-keyword">this</span>.dialogueBox.visible = <span class="hljs-literal">false</span>
+  <span class="hljs-keyword">this</span>.dialogueBook = <span class="hljs-keyword">this</span>.add.bitmapText(<span class="hljs-number">430</span>, <span class="hljs-number">277</span>, <span class="hljs-string">"pixelFont"</span>, <span class="hljs-string">"You attended to Gill's lecture! \n You learned a new attack!"</span>, <span class="hljs-number">17</span>);
+  <span class="hljs-keyword">this</span>.dialogueBook.visible = <span class="hljs-literal">false</span>
+  <span class="hljs-keyword">this</span>.xButton = <span class="hljs-keyword">this</span>.add.image(<span class="hljs-number">665</span>, <span class="hljs-number">274</span>, <span class="hljs-string">"exit"</span>).setInteractive({ <span class="hljs-attr">useHandCursor</span>: <span class="hljs-literal">true</span> });
+  <span class="hljs-keyword">this</span>.xButton.on(<span class="hljs-string">'pointerdown'</span>, () =&gt; <span class="hljs-keyword">this</span>.clickExit());
+  <span class="hljs-keyword">this</span>.xButton.visible = <span class="hljs-literal">false</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-16">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-16">&#182;</a>
+              </div>
+              <p>end dialogue box section…………………………………</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>
+  cursors = <span class="hljs-keyword">this</span>.input.keyboard.createCursorKeys();</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-17">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-17">&#182;</a>
+              </div>
+              <p>exit engr</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  worldLayer.setTileIndexCallback([<span class="hljs-number">1336</span>], exitEngrL, <span class="hljs-keyword">this</span>);
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">exitEngrL</span>(<span class="hljs-params"></span>)
+    </span>{
+        game.scene.keys[<span class="hljs-string">'EngrLScene'</span>].sys.sleep();
+        game.scene.keys[<span class="hljs-string">'EngrScene'</span>].sys.wake();
+    	<span class="hljs-keyword">this</span>.scene.switch(<span class="hljs-string">'EngrScene'</span>);
+    }
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-18">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-18">&#182;</a>
+              </div>
+              <p>dialogue for talking to Gill</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>clickBook() {
+
+  <span class="hljs-keyword">this</span>.dialogueBox.visible = <span class="hljs-literal">true</span>
+  <span class="hljs-keyword">this</span>.dialogueBook.visible = <span class="hljs-literal">true</span>
+  <span class="hljs-keyword">this</span>.xButton.visible = <span class="hljs-literal">true</span></pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-19">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-19">&#182;</a>
+              </div>
+              <p>check to see if a new move can be added</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>  <span class="hljs-keyword">if</span>(battleCount == <span class="hljs-number">1</span> &amp;&amp; !<span class="hljs-keyword">this</span>.collectedAttacks.first)
+	{
+		<span class="hljs-keyword">this</span>.collectedAttacks.first = <span class="hljs-literal">true</span>;
+		attackArr.push({<span class="hljs-attr">name</span>:<span class="hljs-string">"Linked List"</span>,<span class="hljs-attr">basePower</span>:<span class="hljs-number">60</span>, <span class="hljs-attr">cost</span>:<span class="hljs-number">2</span>, <span class="hljs-attr">accuracy</span>:<span class="hljs-number">85</span>, <span class="hljs-attr">critRate</span>:<span class="hljs-number">1</span>});
+	}
+	<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(battleCount == <span class="hljs-number">2</span> &amp;&amp; !<span class="hljs-keyword">this</span>.collectedAttacks.second)
+	{
+		<span class="hljs-keyword">this</span>.collectedAttacks.second = <span class="hljs-literal">true</span>;
+		attackArr.push({<span class="hljs-attr">name</span>:<span class="hljs-string">"Recursion"</span>,<span class="hljs-attr">basePower</span>:<span class="hljs-number">55</span>, <span class="hljs-attr">cost</span>:<span class="hljs-number">5</span>, <span class="hljs-attr">accuracy</span>:<span class="hljs-number">85</span>, <span class="hljs-attr">critRate</span>:<span class="hljs-number">2</span>});
+	}
+	<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(battleCount == <span class="hljs-number">3</span> &amp;&amp; !<span class="hljs-keyword">this</span>.collectedAttacks.third)
+	{
+		<span class="hljs-keyword">this</span>.collectedAttacks.third = <span class="hljs-literal">true</span>;
+		attackArr.push({<span class="hljs-attr">name</span>:<span class="hljs-string">"Big O"</span>,<span class="hljs-attr">basePower</span>:<span class="hljs-number">85</span>, <span class="hljs-attr">cost</span>:<span class="hljs-number">5</span>, <span class="hljs-attr">accuracy</span>:<span class="hljs-number">70</span>, <span class="hljs-attr">critRate</span>:<span class="hljs-number">1</span>});
+	}
+}</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-20">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-20">&#182;</a>
+              </div>
+              <p>for when clicking exit, everything disappears</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>clickExit() {
+  <span class="hljs-keyword">this</span>.dialogueBox.visible = <span class="hljs-literal">false</span>
+  <span class="hljs-keyword">this</span>.dialogueBook.visible = <span class="hljs-literal">false</span>
+  <span class="hljs-keyword">this</span>.xButton.visible = <span class="hljs-literal">false</span>
+}
+
+update(time, delta) {
+  <span class="hljs-keyword">if</span>(player.getEnergy() &lt;= <span class="hljs-number">0</span> )
+    {
+      gameOver(<span class="hljs-keyword">this</span>);
+    }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-21">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-21">&#182;</a>
+              </div>
+              <p>player speed</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre> <span class="hljs-keyword">const</span> speed = <span class="hljs-number">100</span> * gameSettings.playerSpeed;
+ <span class="hljs-keyword">const</span> prevVelocity = player.body.velocity.clone();</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-22">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-22">&#182;</a>
+              </div>
+              <p>stop previous movements</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre> player.body.setVelocity(<span class="hljs-number">0</span>);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-23">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-23">&#182;</a>
+              </div>
+              <p>move left/right</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre> <span class="hljs-keyword">if</span> (cursors.left.isDown) {
+   player.body.setVelocityX(-speed);
+   player.energyDown();<span class="hljs-comment">//method to decrease energy (part of the player class)</span>
+ } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (cursors.right.isDown) {
+   player.body.setVelocityX(speed);
+   player.energyDown();<span class="hljs-comment">//method to decrease energy (part of the player class)</span>
+ }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-24">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-24">&#182;</a>
+              </div>
+              <p>move up/down</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre> <span class="hljs-keyword">if</span> (cursors.up.isDown) {
+   player.body.setVelocityY(-speed);
+   player.energyDown();<span class="hljs-comment">//method to decrease energy (part of the player class)</span>
+ } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (cursors.down.isDown) {
+   player.body.setVelocityY(speed);
+   player.energyDown();<span class="hljs-comment">//method to decrease energy (part of the player class)</span>
+ }</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-25">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-25">&#182;</a>
+              </div>
+              <p>moving diagonally aint faster</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre> player.body.velocity.normalize().scale(speed);</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-26">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-26">&#182;</a>
+              </div>
+              <p>player movement animation</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre> <span class="hljs-keyword">if</span> (cursors.left.isDown) {
+   player.anims.play(<span class="hljs-string">'left'</span>, <span class="hljs-literal">true</span>);<span class="hljs-comment">//play animations left movement</span>
+ } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (cursors.right.isDown) {
+   player.anims.play(<span class="hljs-string">'right'</span>, <span class="hljs-literal">true</span>);<span class="hljs-comment">//play animations right movement</span>
+ } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (cursors.up.isDown) {
+   player.anims.play(<span class="hljs-string">'up'</span>, <span class="hljs-literal">true</span>);<span class="hljs-comment">//play animations up movement</span>
+ } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (cursors.down.isDown) {
+   player.anims.play(<span class="hljs-string">'down'</span>, <span class="hljs-literal">true</span>);<span class="hljs-comment">//play animations down movement</span>
+ } <span class="hljs-keyword">else</span> {
+   player.anims.stop();</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-27">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-27">&#182;</a>
+              </div>
+              <p>last moving frame</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>   <span class="hljs-keyword">if</span> (prevVelocity.x &lt; <span class="hljs-number">0</span>) player.frame = player.texture.get(<span class="hljs-number">10</span>);
+   <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (prevVelocity.x &gt; <span class="hljs-number">0</span>) player.frame = player.texture.get(<span class="hljs-number">9</span>);
+   <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (prevVelocity.y &lt; <span class="hljs-number">0</span>) player.frame = player.texture.get(<span class="hljs-number">19</span>);
+   <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (prevVelocity.y &gt; <span class="hljs-number">0</span>) player.frame = player.texture.get(<span class="hljs-number">0</span>);
+ }
+
+}
+
+}</pre></div></div>
+            
+        </li>
+        
+    </ul>
+  </div>
+</body>
+</html>

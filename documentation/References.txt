@@ -1,0 +1,46 @@
+﻿//this will be a .txt file; do not use non-ascii symbols or formatting
+
+
+Tileset credit
+https://www.deviantart.com/chaoticcherrycake/art/Pokemon-Tileset-From-Public-Tiles-32x32-623246343
+
+
+
+
+Sprites:
+- Interior sprites where gathered from the following sources:
+->Stardew Valley game video game developed by Eric "ConcernedApe" Barone. Sprites: https://www.spriters-resource.com/search/?q=stardew+valley
+-> https://www.deviantart.com/akizakura16/art/Hi-res-Interior-General-Tileset-588725678
+NPCs:
+Zender1752 DeviantArt
+-> https://www.deviantart.com/zender1752
+Wildrandomness23 DeviantArt
+->https://www.deviantart.com/wildrandomness23
+End game graphics are used from Undertale. Credits to Toby Fox.
+
+
+Audio :
+->Music from scenes were gathered from the Soundtrack of Undertale and Deltarune video games. Credits to Toby Fox, game developer and music composer of Undertale and Deltarune
+https://tobyfox.bandcamp.com/album/deltarune-chapter-1-ost
+
+
+->Object audio effects where gathered from the Soundtrack of Nintendo The Legend of Zelda Breath of Wild
+
+
+HealthBar.js
+-> Adapted from an example on the official phaser website.
+https://phaser.io/examples/v3/view/game-objects/graphics/health-bars-demo#
+
+
+
+
+WorldScene.js
+->Collecting coffees adapted from
+https://phaser.io/tutorials/making-your-first-phaser-3-game/part8
+->Checking when overlapping with sprites adapted from
+https://codepen.io/samme/pen/pooxMJW?editors=0010
+
+
+SettingsScene.js
+->Slider plugin used from
+https://rexrainbow.github.io/phaser3-rex-notes/docs/site/slider/
