@@ -1,1 +1,3 @@
-# RPG-268
+# RPG Adventure Pixel Game
+EECS 268 : 
+“Send…more…paramedics.”
